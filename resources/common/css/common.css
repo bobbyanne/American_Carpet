@@ -1,0 +1,182 @@
+
+a:link, a:visited {
+    color: #303E50;
+    text-decoration: none;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER STYLES */
+
+#main-header {
+    width: 100%;
+    background-color: #111;
+    position: relative;
+    z-index: 10;
+}
+
+#main-header .facebook-link {
+    color: #fff;
+    position: absolute;
+    left: 10%;
+    top: 12px;
+}
+
+#main-header .facebook-link img {
+    width: 32px;
+    position: relative;
+    top: 10px;
+    margin-right: 6px;
+}
+
+#main-header .header-logo {
+    display: block;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+#main-header .header-logo.lg {
+    width: 420px;
+}
+
+#main-header .phone-number {
+    color: #fff;
+    font-size: 1.3em;
+    position: absolute;
+    right: 8%;
+    top: 28px;
+}
+
+#main-header .phone-number img {
+    width: 32px;
+    position: relative;
+    left: -4px;
+    top: 1px;
+}
+
+/* HEADER NAVIGATION STYLES */
+
+#main-nav {
+    position: relative;
+    background-color: #fff;
+}
+
+#main-nav ul {
+    display: block;
+    width: 785px;
+    margin: auto;
+}
+
+#main-nav li {
+    cursor: pointer;
+    padding: 1em 1.7em;
+    display: inline-block;
+    position: relative;
+    margin-left: -5px;  /* This should fix the spacing between li tags */
+}
+
+#main-nav .menu {
+    position: relative;
+    color: #303E50;
+    background: url(../../images/arrow_up.png) no-repeat;
+    background-position-x: 92%;
+    background-position-y: center;
+    background-size: 10px;
+    transition-duration: .4s;
+}
+
+#main-nav .menu.selected {
+    background: url(../../images/arrow_down.png) no-repeat;
+    background-position-x: 92%;
+    background-position-y: center;
+    background-size: 10px;
+    background-color: #111;
+    color: #fff;
+}
+
+#main-nav .sub-menu {
+    background-color: #111;
+    position: absolute;
+    top: 51px;
+    height: 0;
+    letter-spacing: 2px;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
+    left: 0px;
+    z-index: -1;
+}
+
+#main-nav .sub-menu.flooring.show {
+    height: 115px;
+    z-index: 1;
+}
+
+#main-nav .sub-menu.home-design.show {
+    height: 60px;
+    z-index: 1;
+}
+
+#main-nav .sub-menu ul li img {
+    position: absolute;
+    left: -38px;
+    top: 4px;
+    width: 286px;
+    bottom: -8px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#main-nav .sub-menu ul {
+    width: 200px;
+}
+
+#main-nav .sub-menu ul li {
+    font-size: 0.8em;
+    height: auto;
+    text-transform: uppercase;
+    padding: 0;
+    opacity: 0;
+}
+
+#main-nav .sub-menu ul li.show {
+    opacity: 1;
+}
+
+#main-nav .sub-menu a {
+    display: block;
+    width: 198px;
+    height: 100%;
+    padding: 0.5em 0em 0.5em 1em;
+}
+
+#main-nav .sub-menu a:visited, #main-nav .sub-menu a:link {
+    color: #fff;
+}
+
+#main-nav .sub-menu ul a:hover {
+    text-shadow: 0px 0px 5px rgba(70, 70, 70, 0.7);
+    background-color: #fff;
+    color: #111;
+    height: 16px;
+}
+
+#main-nav .flooring {
+    width: 200px;
+}
+
+/* Erase */
+
+
+
+
+
