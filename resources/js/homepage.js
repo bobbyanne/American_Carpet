@@ -135,12 +135,13 @@ $(function () {
         var scrollY = $(this).scrollTop();
 
         if (scrollY > $servingTorr.offset().top - window.innerHeight && scrollY < $servingTorr.offset().top + 800) {
+            var offsetWindow = $servingTorr.offset().top - window.innerHeight / 2;
             var damper = window.innerWidth < 800 ? 600 : 1800;
-            var opacityDamper = window.innerWidth < 800 ? 1500 : 1400;
+            var opacityDamper = window.innerWidth < 800 ? 1500 : 1670;
             $servingDesc.css(
                 {
-                    'transform': 'translate(0, ' + (scrollY - $servingTorr.offset().top / 1.1) / (scrollY / damper) + 'px)',
-                    'opacity': Math.max(0, 2.5 - (scrollY / opacityDamper))
+                    'transform': 'translate(0, ' + ((scrollY - offsetWindow) / 2 ) + 'px)',
+                        'opacity': Math.max(0, 2.5 - (scrollY / opacityDamper))
                 });
             $birds.stop().animate({
                 right: scrollY - $servingTorr.offset().top - (scrollY / 500)
@@ -178,5 +179,17 @@ $(function () {
     });
 
     $('.testimates-wrapper').slick();
+    $('.hide-unhide').click(function () {
+        var $this = $(this);
+        var oldText = $this.text();
+        var newText = oldText === 'Hide' ? 'Unhide' : 'Hide';
+        $this.text(newText);
+        var p = $this.parent().parent().find('p');
+        if (newText === 'Hide') {
+            p.slideDown(200);
+        } else {
+            p.slideUp(200);
+        }
+    });
 
 });
