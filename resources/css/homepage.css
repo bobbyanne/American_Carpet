@@ -42,7 +42,7 @@ body {
 
 #main .landing {
     position: relative;
-    background-image: url(../../resources/images/wood-floor/wood-floor-2.jpg);
+    background-image: url(/home/bobbyanne/Documents/AmericanFlooring/resources/images/wood-floor/wood-floor-2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -306,7 +306,7 @@ section.products {
 }
 
 #product-hardwood .product-picture {
-    background-image: url(../../resources/images/wood-floor/wood-floor-06.jpeg);
+    background-image: url(../../resources/images/wood-floor/wood-floor-6-small.jpeg);
     background-position: center bottom;
 }
 
@@ -316,7 +316,7 @@ section.products {
 }
 
 #product-laminate .product-picture {
-    background-image: url(../../resources/images/laminate-floor/laminate-02.jpg);
+    background-image: url(../../resources/images/laminate-floor/laminate-02-small.jpg);
     background-position: center bottom;
 }
 
@@ -327,7 +327,7 @@ section.products {
 }
 
 #product-tile .product-picture {
-    background-image: url(../../resources/images/tile-floor/tile-floor-01.jpg);
+    background-image: url(../../resources/images/tile-floor/tile-floor-01-small.jpg);
     height: 100%;
 }
 
@@ -348,7 +348,7 @@ section.products {
 }
 
 #product-cabinets .product-picture {
-    background-image: url(../../resources/images/cabinets.jpg);
+    background-image: url(../../resources/images/cabinets-small.jpg);
 }
 
 #product-cabinets {
