@@ -1,15 +1,15 @@
 @font-face { 
 	font-family: Roboto; 
-	src: url('../resources/fonts/Roboto-Regular.ttf'); 
+	src: url('../fonts/Roboto-Regular.ttf'); 
 }
 @font-face { 
 	font-family: Roboto Condensed; 
-	src: url(../resources/fonts/RobotoCondensed-Regular.ttf);
+	src: url('../fonts/RobotoCondensed-Regular.ttf');
 }
 
 @font-face { 
 	font-family: Roboto Slab;
-	src: url(../resources/fonts/RobotoSlab-Regular.ttf;
+	src: url('../fonts/RobotoSlab-Regular.ttf');
 }
 
 
