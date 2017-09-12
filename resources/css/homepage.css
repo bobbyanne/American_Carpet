@@ -227,6 +227,7 @@ section.products {
 
 .products .brands {
     width: 80%;
+    text-align: center;
     margin: 0 auto;
     padding-top: 1em;
     clear: both;
@@ -245,7 +246,7 @@ section.products {
 .brands h1:after {
     content: "";
     position: absolute;
-    right: -37%;
+    right: -10px;
     width: 35%;
     top: 50%;
     height: 1px;
@@ -255,7 +256,7 @@ section.products {
 .brands h1:before {
     content: "";
     position: absolute;
-    left: -39%;
+    left: -10px;
     width: 35%;
     top: 50%;
     height: 1px;
