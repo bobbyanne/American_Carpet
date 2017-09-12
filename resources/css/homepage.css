@@ -42,7 +42,7 @@ body {
 
 #main .landing {
     position: relative;
-    background-image: url(/home/bobbyanne/Documents/AmericanFlooring/resources/images/wood-floor/wood-floor-2.jpg);
+    background-image: url(../../resources/images/wood-floor/wood-floor-2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
