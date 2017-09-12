@@ -107,10 +107,10 @@ ul {
 #main-nav .sub-menu {
     background-color: #111;
     position: absolute;
-    top: 51px;
+    top: 50px;
     height: 0;
     letter-spacing: 2px;
-    transition-duration: .5s;
+    transition-duration: .3s;
     transition-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
     left: 0px;
     z-index: -1;
