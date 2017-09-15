@@ -35,21 +35,6 @@
         });
     };
 
-    $.fn.svgGroupShrinkAnim = function (duration) {
-        return this.each(function () {
-            var $this = $(this);
-            $({ pos: 1 }).animate({ pos: 0 }, {
-                duration: duration,
-                step: function (now) {
-                    $this.attr({
-                        transform: 'scale(' + now + ')'
-                    });
-                }
-            });
-        });
-    };
-
-
     $.fn.svgTextSpellAnim = function (delay, timeBetween, callback) {
         return this.each(function () {
             var $this = $(this);
@@ -97,21 +82,6 @@
 $(function () {
 
     var $cabinetSVG = $('#cabinet-svg');
-
-    // function cabinetAnim() {
-    //     $('#stove', $cabinetSVG).svgGroupTransformAnim(0, 1000, 'y', 1000, 'swing', function () {
-    //         $('#cabinet-bottom', $cabinetSVG).svgGroupTransformAnim(0, 1000, 'y', 1000, 'swing', function () {
-    //             $('.appliance', $cabinetSVG).svgGroupTransformAnim(0, 1500, 'y', 1000, 'easeOutBounce');
-    //             setTimeout(function() {
-    //                 $('#cabinet-top', $cabinetSVG).svgGroupTransformAnim(0, 1000, 'y', 1000, 'linear', function() {
-    //                     $('#toast', $cabinetSVG).svgGroupTransformAnim(0, 300, 'y', 2000, 'easeOutBounce');
-    //                 });
-    //             }, 2000);
-    //         });
-    //     });
-    // }
-
-    // cabinetAnim();
     var $servingTorr = $('.serving-torrence');
     var $servingDesc = $('.serving-torrence-description', $servingTorr);
     var $birds = $('#birds-bg', $servingTorr);
@@ -122,10 +92,18 @@ $(function () {
     var $designSection = $('.design-help');
     var $designDesc = $('#design-description');
 
+    /*``````````````````````````````````````````````````````````````````````````````````*/
+                                    /* HELPER FUNCTIONS */
+
+    function checkScreenSize () {
+        /* This function is a container for any changes that need to be made to the DOM
+           When the DOM is ready and on window resize. */
+    }
+    /*``````````````````````````````````````````````````````````````````````````````````*/
+
     $(window).resize(function () {
         if (window.innerWidth <= 800) {
             $('.scroll-follow-breakpoint').append($('.more-then-flooring-right'));
-            console.log('appended');
         } else if (window.innerWidth > 800) {
             $($build.append($('.more-then-flooring-right')));
         }
@@ -136,12 +114,16 @@ $(function () {
 
         if (scrollY > $servingTorr.offset().top - window.innerHeight && scrollY < $servingTorr.offset().top + 800) {
             var offsetWindow = $servingTorr.offset().top - window.innerHeight / 2;
-            var damper = window.innerWidth < 800 ? 600 : 1800;
-            var opacityDamper = window.innerWidth < 800 ? 1500 : 1670;
+            var damper = window.innerWidth < 800 ? 2.2 : 2;
+            var opacityDamper = window.innerWidth < 800 ? 1950 : 1870;
+            if (window.innerWidth <= 720) {
+                damper = 2.5;
+                opacityDamper = 2700;
+            }
             $servingDesc.css(
                 {
-                    'transform': 'translate(0, ' + ((scrollY - offsetWindow) / 2 ) + 'px)',
-                        'opacity': Math.max(0, 2.5 - (scrollY / opacityDamper))
+                    'transform': 'translate(0, ' + ((scrollY - offsetWindow) / damper) + 'px)',
+                    'opacity': Math.max(0, 2.5 - (scrollY / opacityDamper))
                 });
             $birds.stop().animate({
                 right: scrollY - $servingTorr.offset().top - (scrollY / 500)
@@ -154,10 +136,32 @@ $(function () {
             }, 800);
         }
 
-        var height = $buildContainer.height();
-        var start = $buildContainer.offset().top - window.innerHeight / 5;
-        var end = $buildContainer.next().offset().top - window.innerHeight / 1.25;
+        var cabinetStart = window.innerHeight > 600 ? 5 : 8;
+        var cabinetEnd = window.innerHeight > 600 ? 1.25 : 1.13;
+
+        if (window.innerHeight < 500 && window.innerWidth < 400) {
+            cabinetStart = 2;
+            cabinetEnd = 1.28;
+        }
+        else if (window.innerHeight < 700 && window.innerWidth < 500) {
+            cabinetStart = 2;
+            cabinetEnd = 1.38;
+        }
+        else if (window.innerHeight > 600 && window.innerHeight <= 800) {
+            cabinetStart = 5;
+            cabinetEnd = 1.25;                        
+        } else if (window.innerHeight > 800 && window.innerHeight <= 1000) {
+            cabinetStart = 4.5;
+            cabinetEnd = 1.32;
+        } else if (window.innerHeight > 1000) {
+            cabinetStart = 2;
+            cabinetEnd = 1.41;
+        }
+
+        var start = $buildContainer.offset().top - window.innerHeight / cabinetStart;
+        var end = $buildContainer.next().offset().top - window.innerHeight / cabinetEnd;
         if (scrollY > start && scrollY < end) {
+            var height = $buildContainer.height();
             var thing = $buildContainer.offset().top - window.innerHeight / 6.1;
             $build.removeClass('done');
             $build.addClass('fixed');

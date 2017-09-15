@@ -43,10 +43,15 @@ ul {
     display: block;
     margin: 0 auto;
     padding: 1em;
+    width: 350px;
 }
 
-#main-header .header-logo.lg {
-    width: 420px;
+.header-logo img {
+    width: 100%;
+}
+
+.header-logo img:nth-of-type(2) {
+    display: none;
 }
 
 #main-header .phone-number {
@@ -64,6 +69,134 @@ ul {
     top: 1px;
 }
 
+#mobile-menu-toggle {
+    width: 42px;
+    height: 32px;
+    position: absolute;
+    right: 20px;
+    top: 22px;
+    display: none;
+}
+
+#mobile-menu-toggle span {
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: #eee;
+    position: absolute;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    opacity: 1;
+}
+
+#mobile-menu-toggle span:nth-of-type(1) {
+    top: 0;
+}
+
+#mobile-menu-toggle span:nth-of-type(1).clicked {
+    opacity: 0;
+}
+
+#mobile-menu-toggle span:nth-of-type(2) {
+    top: 12px;
+    transform: rotate(0deg);
+}
+
+#mobile-menu-toggle span:nth-of-type(2).clicked {
+    transform: rotate(45deg);
+}
+
+#mobile-menu-toggle span:nth-of-type(3) {
+    top: 24px;
+}
+
+#mobile-menu-toggle span:nth-of-type(3).clicked {
+    opacity: 0;
+}
+
+#mobile-menu-toggle span:last-of-type {
+    top: 12px;
+    transform: rotate(0deg);
+}
+
+#mobile-menu-toggle span:last-of-type.clicked {
+    transform: rotate(-45deg);
+}
+
+#mobile-menu {
+    position: fixed;
+    z-index: 4;
+    background-color: #222;
+    top: 71px;
+    width: 100%;
+    font-family: Roboto Condensed;
+    color: #fff;
+    max-height: 60%;
+    overflow-y: scroll;
+    display: none;
+    text-transform: uppercase;
+    display: none;
+}
+
+#mobile-menu li {
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+#mobile-menu .mobile-submenu li {
+    padding: 0;
+}
+
+#mobile-menu .mobile-submenu a {
+    padding: 8px;
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    color: #fff;
+    border-left: 2px solid #FF5F00;
+    margin-top: 6px;
+}
+
+.show > li:nth-child(1) > a:nth-child(1) {
+    margin-top: 0px;
+}
+
+#mobile-menu a:active {
+    color: #FF5F00;
+}
+
+#mobile-menu .layer1 {
+    padding-left: 20px;
+}
+
+#mobile-menu .layer1:nth-of-type(odd) {
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #111;
+}
+
+.mobile-dropdown .dropdown-arrow-mobile {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+#mobile-menu .layer1 ul {
+    overflow: hidden;
+    height: 0;
+    margin: 0;
+    padding-left: 60px;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+#mobile-menu .layer1 ul.show {
+    height: auto;
+}
 /* HEADER NAVIGATION STYLES */
 
 #main-nav {
@@ -174,9 +307,89 @@ ul {
     width: 200px;
 }
 
-/* Erase */
 
 
+@media (max-width: 1000px) {
+    #main-header .header-logo {
+        width: 300px;
+    }
+    
+    #main-header .facebook-link {
+        left: 4%;
+    }
+    
+    #main-header .phone-number {
+        right: 2%;
+    }
+}
+
+@media (max-width: 800px) {
+    #main-header .facebook-link {
+        font-size: 0.8em;
+        top: 14px;
+        left: 2%;
+    }
+    
+    #main-header .facebook-link img {
+        width: 28px;
+    }
+    
+    #main-header .phone-number {
+        font-size: 1em;
+        right: 2%;
+    }
+    
+    #main-header .phone-number img {
+        width: 28px;
+        top: 3px;
+    }
+}
+
+@media (max-width: 740px) {
+    #main-header {
+        position: fixed;
+    }
+    
+    #main-header .header-logo {
+        width: 280px;
+    }
+    
+    #main-header .header-logo img {
+        width: 99%;
+        position: relative;
+        left: -10px;
+    }
+    
+    .header-logo img:nth-of-type(1) {
+        display: none;
+    }
+    
+    .header-logo img:nth-of-type(2) {
+        display: block;
+        width: 135px !important;
+    }
+    
+    .header-logo {
+        width: 135px !important;
+        margin: 0 !important;
+    }
+    
+    #main-header .facebook-link {
+        display: none;
+    }
+    
+    #main-header .phone-number {
+        display: none;
+    }
+    
+    #main-nav {
+        display: none;
+    }
+    
+    #mobile-menu-toggle {
+        display: block;
+    }
+}
 
 
 
