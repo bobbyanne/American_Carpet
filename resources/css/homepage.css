@@ -220,9 +220,8 @@ section.why-choose-us {
 section.products {
     margin-top: 3em;
     color: #474747;
-    padding: 3em;
-    background-color: #eee;
-    background: url(../../resources/images/feathers.png) fixed;
+    padding: 0.5em 3em 3em 3em;
+    background-color: #fafafa;
 }
 
 .products .brands {
@@ -276,36 +275,46 @@ section.products {
 
 .products-inner .products-header h1 {
     font-size: 2.3em;
-    color: #fff;
-    width: 50%;
-    margin: auto;
-    background-color: #474747;
-    padding: 0.4em;
+    color: #FF9800;
     font-family: Roboto Condensed;
-    text-align: center;
     font-weight: lighter;
     margin-bottom: 0.3em;
     position: relative;
-    text-transform: uppercase;
+}
+
+.products-header p {
+    margin-bottom: 2.2em;
+    color: #474747;
 }
 
 .product-container {
     margin: auto;
+    transform: translateZ(0px);
 }
 
 .product-container ul li {
-    width: 32.4%;
-    height: 400px;
-    margin-right: 10px;
+    width: 31.55%;
+    height: 470px;
+    margin-right: 25px;
     display: inline-block;
-    margin-bottom: 6px;
+    margin-bottom: 25px;
     overflow: hidden;
-    position: relative;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+	border-bottom: 1px solid #DFDFDF;
+	position: relative;
+	vertical-align: top;
+    border-radius: 2px;
+    transition: all 0.2s linear;
+}
+
+.product-container ul li:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    transform: scale(1.03);
 }
 
 .product-container .product-picture {
     width: 100%;
-    height: 100%;
+    height: 220px;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -313,22 +322,11 @@ section.products {
 #product-carpet .product-picture {
     background-image: url(../../resources/images/carpet-floor/carpet-04.jpg);
     background-position: left;
-    height: 100%;
-}
-
-#product-carpet {
-    width: 50%;
-    float: left;
 }
 
 #product-hardwood .product-picture {
     background-image: url(../../resources/images/wood-floor/wood-floor-6-small.jpeg);
     background-position: center bottom;
-}
-
-#product-hardwood {
-    width: 49%;
-    margin-right: 0;
 }
 
 #product-laminate .product-picture {
@@ -337,19 +335,14 @@ section.products {
 }
 
 #product-laminate {
-    width: 50%;
-    float: left;
-    margin-right: 10px;
+    margin-right: 0;
 }
 
 #product-tile .product-picture {
     background-image: url(../../resources/images/tile-floor/tile-floor-01-small.jpg);
-    height: 100%;
 }
 
 #product-tile {
-    width: 49%;
-    margin-right: 0;
 }
 
 #product-countertop .product-picture {
@@ -357,65 +350,54 @@ section.products {
     background-position: center bottom;
 }
 
-#product-countertop {
-    width: 50%;
-    margin-right: 10px;
-    float: left;
-}
-
 #product-cabinets .product-picture {
     background-image: url(../../resources/images/cabinets-small.jpg);
 }
 
 #product-cabinets {
-    width: 49%;
     margin-right: 0;
 }
 
 .product-details {
     position: absolute;
-    bottom: 0;
     left: 0;
     right: 0;
-    padding: 1em 1em 0.4em 1em;
-    background-color: rgba(20, 20, 20, 0.6);
+    background-color: #fff;
+    height: 240px;
+    padding: 4px 10px;
 }
-
-.product-details h4 {
-    margin: 0;
-    color: #FF5F00;
+h4.card-title {
+    margin: 16px 0 12px 0;
     text-transform: uppercase;
-    font-family: Roboto Condensed;
+    color: #212121;
+    font-family: Roboto;
+    font-weight: lighter;
     font-size: 1.5em;
     position: relative;
-}
-
-h4 .hide-unhide {
-    font-size: 0.6em;
-    position: absolute;
-    right: 0;
-    top: 5px;
-    text-decoration: underline;
-    cursor: pointer;
+    padding: 0 0 0 16px;
+    background-color: #fff;
 }
 
 .product-details p {
-    color: #fff;
-    font-family: Roboto Condensed;
-    font-weight: bold;
-    font-size: 1.2em;
-    margin: 12px 0;
+    color: #757575;
+    font-family: Roboto;
+    font-size: 1.1em;
+    margin: 0;
     overflow: hidden;
+    padding: 16px 16px 0 16px;
+    line-height: 24px;
+    border-top: 1px solid #BDBDBD;
 }
 
 .product-details .product-link {
     font-family: Roboto;
-    margin: 12px 0 0 0;
     display: block;
     font-size: 0.8em;
     font-weight: normal;
-    color: #FF5F00;
-    text-decoration: underline;
+    color: #448AFF;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 10px;
 }
 
 /* SERVING TORRENCE */
@@ -445,6 +427,7 @@ section.serving-torrence {
     margin: auto;
     border-left: 4px solid #FF5F00;
     padding: 1em;
+    transform: translate3d(0,0,0);
 }
 
 .serving-torrence h1 {
@@ -493,6 +476,7 @@ section.more-than-flooring #cabinet-svg {
     height: 100%;
     margin-left: 10%;
     overflow: visible;
+    transform: translate3d(0,0,0);
 }
 
 .more-then-flooring-right {
@@ -551,6 +535,7 @@ section.design-help {
     top: 250px;
     border-bottom-right-radius: 25px;
     border-top-left-radius: 25px;
+    transform: translate3d(0,0,0);
 }
 
 .design-help-description p {
@@ -777,6 +762,14 @@ span.quote-by:before {
     .products-inner {
         width: 999px;
     }
+    .products li {
+        width: 31.15% !important;
+    }
+    
+    .product-details p {
+        font-size: 1em;
+        padding-top: 8px;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -828,20 +821,22 @@ span.quote-by:before {
         display: none;
     }
     
+    .products-inner li {
+        width: 31.7% !important;
+        height: 500px !important;
+        margin-right: 15px !important;
+    }
+    
+    .product-details {
+        height: 270px;
+    }
+    
+    #product-laminate, #product-cabinets {
+        margin-right: 0 !important;
+    }
+    
     .products-inner {
         width: 100%;
-    }
-    
-    #product-carpet {
-        width: 49.433%;
-    }
-    
-    #product-laminate {
-        width: 49.433%;
-    }
-    
-    #product-countertop {
-        width: 49.433%;
     }
     
     .more-than-flooring #cabinet-svg {
@@ -856,6 +851,27 @@ span.quote-by:before {
     
     .more-then-flooring-right p {
         margin-top: -0.6em;
+    }
+}
+
+@media (max-width: 860px) {
+    .products li {
+        margin-right: 10px !important;
+        margin-top: -10px;
+        height: 480px !important;
+        width: 49% !important;
+    }
+    
+    #product-laminate {
+        margin-right: 10px !important;
+    }
+    
+    #product-hardwood, #product-tile {
+        margin-right: 0 !important;
+    }
+    
+    .product-details {
+        height: 250px;
     }
 }
 
@@ -942,15 +958,35 @@ span.quote-by:before {
         font-family: Roboto Condensed;
         font-size: 2.4em;
     }
+    
+    .products li {
+        margin-right: 5px !important;;
+    }
+    
+    #product-laminate {
+        margin-right: 5px !important;
+    }
+    
+    .design-help-description-container {
+        width: 60%;
+    }
+    
+    #design-help-img {
+        border: none;
+        width: 100%;
+        margin: 0;
+        float: none;
+        box-shadow: none;
+    }
 }
-
 
 @media (max-width: 720px) {
     .products li {
         display: block !important;
         float: none;
         clear: both;
-        width: 100% !important;
+        width: 95% !important;
+        margin: 15px auto !important;
     }
     
     .products .brands {
