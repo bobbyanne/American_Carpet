@@ -1016,7 +1016,8 @@ span.quote-by:before {
         width: 100%;
     }
     
-    .more-than-flooring.fixed {
+    
+    section.steps {
         display: none;
     }
 }
