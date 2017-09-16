@@ -9,8 +9,6 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
-    width: 100%;
-    width: 100vw;
 }
 
 ul {
@@ -353,6 +351,8 @@ ul {
     #main-header {
         position: fixed;
         display: block;
+        width: 100%;
+        max-width: 740px;
         top: 0px;
         left: 0px;
         right: 0px;
