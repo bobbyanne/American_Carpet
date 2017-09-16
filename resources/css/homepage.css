@@ -460,8 +460,10 @@ section.more-than-flooring {
 
 section.more-than-flooring.fixed {
     position: fixed;
+    width: 100%;
     height: 100vh;
     top: 0%;
+    -webkit-backface-visibility: hidden;
 }
 
 section.more-than-flooring.done {
