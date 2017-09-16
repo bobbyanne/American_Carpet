@@ -1015,6 +1015,10 @@ span.quote-by:before {
     .serving-torrence-description p {
         width: 100%;
     }
+    
+    .more-than-flooring.fixed {
+        display: none;
+    }
 }
 
 
