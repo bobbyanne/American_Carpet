@@ -92,21 +92,25 @@ $(function () {
     var $designSection = $('.design-help');
     var $designDesc = $('#design-description');
 
-    /*``````````````````````````````````````````````````````````````````````````````````*/
-                                    /* HELPER FUNCTIONS */
+    adaptToScreenSize();
 
-    function checkScreenSize () {
+    /*``````````````````````````````````````````````````````````````````````````````````*/
+    /* HELPER FUNCTIONS */
+
+    function adaptToScreenSize() {
         /* This function is a container for any changes that need to be made to the DOM
-           When the DOM is ready and on window resize. */
-    }
-    /*``````````````````````````````````````````````````````````````````````````````````*/
-
-    $(window).resize(function () {
+           When the DOM is ready or when the window resizes. */
         if (window.innerWidth <= 800) {
             $('.scroll-follow-breakpoint').append($('.more-then-flooring-right'));
         } else if (window.innerWidth > 800) {
             $($build.append($('.more-then-flooring-right')));
         }
+    }
+
+    /*``````````````````````````````````````````````````````````````````````````````````*/
+
+    $(window).resize(function () {
+        adaptToScreenSize();
     });
 
     $(window).scroll(function () {
@@ -131,9 +135,10 @@ $(function () {
         }
 
         if (scrollY > $designSection.offset().top - window.innerHeight) {
+            var max = window.innerWidth <= 720 ? 375 : 300;
             $designDesc.stop().animate({
-                top: Math.max(60, Math.min(300, scrollY - $designSection.offset().top + (window.innerHeight / 3) / (scrollY / 1000)))
-            }, 800);
+                top: Math.max(60, Math.min(max, scrollY - $designSection.offset().top + (window.innerHeight) / (scrollY / 1000)))
+            }, 800);  /*  FIIIIIIIIIX MEEE  do not use top*/
         }
 
         var cabinetStart = window.innerHeight > 600 ? 5 : 8;
@@ -149,7 +154,7 @@ $(function () {
         }
         else if (window.innerHeight > 600 && window.innerHeight <= 800) {
             cabinetStart = 5;
-            cabinetEnd = 1.25;                        
+            cabinetEnd = 1.25;
         } else if (window.innerHeight > 800 && window.innerHeight <= 1000) {
             cabinetStart = 4.5;
             cabinetEnd = 1.32;
@@ -176,7 +181,6 @@ $(function () {
         } else if (scrollY > end && $build.hasClass('fixed')) {
             $build.removeClass('fixed');
             $build.addClass('done');
-            console.log('yep');
         } else if (scrollY < start && $build.hasClass('fixed')) {
             $build.removeClass('fixed');
         }
