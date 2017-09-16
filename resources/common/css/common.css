@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    width: 100%;
 }
 
 ul {
@@ -352,7 +353,8 @@ ul {
         position: fixed;
         display: block;
         top: 0px;
-        right: 110px;
+        left: 0px;
+        right: 0px;
     }
     
     #main-header .header-logo {
