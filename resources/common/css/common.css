@@ -19,6 +19,9 @@ ul {
 
 /* HEADER STYLES */
 
+#header-container {
+}
+
 #main-header {
     width: 100%;
     background-color: #111;
@@ -348,14 +351,10 @@ ul {
 }
 
 @media (max-width: 740px) {
-    #main-header {
+    #header-container {
         position: fixed;
-        display: block;
         width: 100%;
-        max-width: 740px;
-        top: 0px;
-        left: 0px;
-        right: 0px;
+        z-index: 100;
     }
     
     #main-header .header-logo {
