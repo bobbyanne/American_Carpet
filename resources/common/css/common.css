@@ -8,6 +8,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 ul {
@@ -353,7 +354,6 @@ ul {
         top: 0;
         left: 0;
         right: 0;
-        width: 99vw;
     }
     
     #main-header .header-logo {
