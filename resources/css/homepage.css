@@ -1020,6 +1020,10 @@ span.quote-by:before {
     section.steps {
         display: none;
     }
+    
+    section.testimonies img {
+        width: 100% !important;
+    }
 }
 
 
