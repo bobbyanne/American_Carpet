@@ -1,37 +1,29 @@
 
 (function ($) {
-    $.fn.svgGroupTransformAnim = function (end, duration, property, delay, easing, callback) {
-        // please note that this function is most likely buggy.  And it's rather limited
+    $.fn.transformAnim = function (end, duration, property, delay, easing, callback) {
         return this.each(function () {
             var $this = $(this);
             var x, y, start;
             property = property === 'y' ? 'y' : 'x';
-            var translate = $this.attr('transform').match(/-?\d+/g);
-            if (translate.length > 1) {
-                x = translate[0];
-                y = translate[1];
-            } else {
-                x = translate[0];
-            }
+            var translate = $this.css('transform').split(',');
+            x = translate[4];
+            y = translate[5].replace(')', '');
             start = property === 'y' ? y : x;
-
-            setTimeout(function () {
-                $({ pos: start }).animate({ pos: end }, {
-                    duration: duration,
-                    step: function (now) {
-                        if (property === 'y') {
-                            $this.attr({
-                                transform: 'translate(' + x + ' ' + now + ')'
-                            });
-                        } else {
-                            $this.attr({
-                                transform: 'translate(' + now + ' ' + y ? y : '' + ')'
-                            });
-                        }
-                    },
-                    easing: easing
-                }, callback ? callback() : $.noop);
-            }, delay += 400);
+            $({ pos: start }).stop().animate({ pos: end }, {
+                duration: duration,
+                step: function (now) {
+                    if (property === 'y') {
+                        $this.css({
+                            transform: 'matrix(1, 0, 0, 1,' + x + ', ' + now + ')'
+                        });
+                    } else {
+                        $this.css({
+                            transform: 'matrix(1, 0, 0, 1, ' + now + ', ' + y ? y : '0' + ')'
+                        });
+                    }
+                },
+                easing: easing
+            }, callback ? callback() : $.noop);
         });
     };
 
@@ -92,6 +84,41 @@ $(function () {
     var $designSection = $('.design-help');
     var $designDesc = $('#design-description');
 
+    var $nextStepsSection = $('#next-steps');
+    var $stepOptionBtns = $('.primary-button-no-link', $nextStepsSection);
+    $stepOptionBtns.each(function () {
+        var $this = $(this);
+        var thisID = $this.attr('id');
+        var $boundList = $('[id^=' + thisID + ']');
+        $(this).data('boundList', $boundList);
+    });
+
+    $stepOptionBtns.click(function () {
+        var $this = $(this);
+        if (!$this.hasClass('disabled')) {
+            if ($stepOptionBtns.hasClass('disabled')) {
+                var $lastChoosen = $stepOptionBtns.filter('.disabled');
+                $lastChoosen.removeClass('disabled');
+                $this.toggleClass('disabled');
+                stepsAnimation($lastChoosen.data('boundList').not($lastChoosen));
+                setTimeout(function () {
+                    $this.data('boundList').not($this).css('display', 'block');
+                    stepsAnimation($this.data('boundList').not($this));
+                    $lastChoosen.data('boundList').not($lastChoosen).css('display', 'none');
+                }, 600);
+            } else {
+                $this.toggleClass('disabled');
+                $this.data('boundList').not($this).slideDown(280, function () {
+                    stepsAnimation($this.data('boundList').not($this));
+                });
+            }
+
+        } else {
+            return;
+        }
+
+    });
+
     adaptToScreenSize();
 
     /*``````````````````````````````````````````````````````````````````````````````````*/
@@ -104,6 +131,23 @@ $(function () {
             $('.scroll-follow-breakpoint').append($('.more-then-flooring-right'));
         } else if (window.innerWidth > 800) {
             $($build.append($('.more-then-flooring-right')));
+        }
+    }
+
+    function stepsAnimation($boundList, hide) {
+        var $steps = $boundList.find('li, .ul-next');
+        $steps.add($boundList.find('.ul-next'));
+        hide = hide === true ? true : false;
+
+        if (hide) {
+            $steps.toggleClass('showing');
+        } else {
+            $steps.each(function (i) {
+                var $this = $(this);
+                setTimeout(function () {
+                    $this.toggleClass('showing');
+                }, i * 100);
+            });
         }
     }
 
@@ -124,6 +168,10 @@ $(function () {
                 damper = 2.5;
                 opacityDamper = 2700;
             }
+            if (window.innerWidth <= 500) {
+                damper = 2.5;
+                opacityDamper = 3000;
+            }
             $servingDesc.css(
                 {
                     'transform': 'translate(0, ' + ((scrollY - offsetWindow) / damper) + 'px)',
@@ -134,11 +182,13 @@ $(function () {
             }, 2500);
         }
 
-        if (scrollY > $designSection.offset().top - window.innerHeight) {
-            var max = window.innerWidth <= 720 ? 375 : 300;
-            $designDesc.stop().animate({
-                top: Math.max(60, Math.min(max, scrollY - $designSection.offset().top + (window.innerHeight) / (scrollY / 1000)))
-            }, 800);  /*  FIIIIIIIIIX MEEE  do not use top*/
+        if (window.innerWidth > 500 && scrollY > $designSection.offset().top - window.innerHeight &&
+            $nextStepsSection.offset().top > 650) {
+            var max = window.innerWidth <= 720 ? 150 : 100;
+            $designDesc.transformAnim(
+                Math.max(
+                    -140, Math.min(
+                        max, scrollY - $designSection.offset().top - window.innerHeight / 6)), 800, 'y');
         }
 
         var cabinetStart = window.innerHeight > 600 ? 5 : 8;

@@ -11,7 +11,7 @@ $(function() {
         animate = animate === true ? true : false;
         $mobileMenuToggle.children().removeClass('clicked');
         if (animate) {
-            $mobileMenu.slideUp();
+            $mobileMenu.slideUp(300);
         } else {
             $mobileMenu.css('display', 'none');
         }
@@ -55,9 +55,9 @@ $(function() {
         var $this = $(this);
         $this.children().toggleClass('clicked');
         if ($this.children().hasClass('clicked')) {
-            $mobileMenu.slideDown();            
+            $mobileMenu.slideDown(250, 'easeOutBack');            
         } else {
-            $mobileMenu.slideUp();            
+            $mobileMenu.slideUp(300);            
         }
         
     });
