@@ -1,0 +1,37 @@
+
+
+@media (max-width: 700px) {
+    
+    .texture-description-container {
+        margin: 0 auto
+    }
+    
+    .texture-description-container h2 {
+        font-size: 2.4em;
+    }
+    
+    .texture-description-container p:first-of-type {
+        margin-top: 220px;
+    }
+    
+    .texture-graphic {
+        bottom: unset;
+        top: 100px;
+    }
+    
+    .texture-graphic img {
+        max-height: 140px;
+    }
+}
+
+@media (max-width: 680px) {
+    #cfn .texture-graphic {
+        top: 160px;
+    }
+}
+
+@media (max-width: 420px) {
+    .texture-description-container h2 {
+        font-size: 2em;
+    }
+}

@@ -1,0 +1,13 @@
+#sm-landing {
+    background: url(../images/carpet-floor/carpet-03.jpg) center;
+    background-size: cover;
+    height: 60vh;
+}
+
+
+.learn-article {
+    background-image: url(../images/circle-bg-single-01.png);
+    background-repeat: no-repeat;
+    background-position: 0 -40px;
+}
+

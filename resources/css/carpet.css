@@ -1,0 +1,86 @@
+
+
+.card {
+    display: none;
+}
+
+.card h1, .card p {
+    text-align: left;
+}
+
+#sm-landing {
+    background: url(../images/carpet-floor/carpet-03.jpg) center;
+    background-size: cover;
+    display: none;
+}
+
+#choosing-carpet-left {
+    background: url(../images/carpet-floor/carpet-07.jpg) no-repeat;
+    background-size: cover;
+}
+
+#carpet-guidelines-right {
+    background: url(../images/carpet-floor/carpet-06.jpg) no-repeat;
+    background-size: cover;
+}
+
+#carpet-fibers-left {
+    background: url(../images/wool.jpg) no-repeat;
+    background-size: cover;
+}
+
+#carpet-cleaning-right {
+    background: url(../images/clean-carpet.jpg) no-repeat;
+    background-size: cover;
+}
+
+.side-by-side-text-container {
+    padding: 3em;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: Roboto;
+}
+
+.side-by-side-text-container p {
+    color: #757575;
+}
+
+.side-by-side-text-container h1 {
+    font-size: 1.8em;
+    color: #212121;
+}
+
+.side-by-side-text-container .accent-button {
+    width: 60%;
+    width: -moz-fit-content;
+}
+
+section.side-by-side:first-of-type {
+    margin-top: 3em;
+}
+
+section.side-by-side:last-of-type {
+    margin-bottom: 3em;
+}
+
+.learn-article {
+    background-image: url(../images/circle-bg-single-01.png);
+    background-repeat: no-repeat;
+    background-position: 0 -40px;
+}
+
+@media (max-width: 760px) {
+    
+    .side-by-side-text-container {
+        font-size: 0.8em !important;
+        padding: 1em;
+    }
+}
+
+@media (max-width: 500px) {
+    .card {
+        display: block;
+    }
+}

@@ -1,17 +1,3 @@
-@font-face { 
-	font-family: Roboto; 
-	src: url('../fonts/Roboto-Regular.ttf'); 
-}
-@font-face { 
-	font-family: Roboto Condensed; 
-	src: url('../fonts/RobotoCondensed-Regular.ttf');
-}
-
-@font-face { 
-	font-family: Roboto Slab;
-	src: url('../fonts/RobotoSlab-Regular.ttf');
-}
-
 
 body {
     overflow-x: hidden;
@@ -19,66 +5,6 @@ body {
 
 #main {
     
-}
-
-.multi-button-container {
-    display: block;
-    margin: auto;
-}
-
-.red-text {
-    color: #FF5F00;
-}
-
-.primary-color-text {
-    color: #FF5F00;
-}
-
-.primary-color-text a {
-    color: #FF5F00;
-}
-
-.accent-color-text {
-    color: #448AFF;
-}
-
-.accent-color-text a {
-    color: #448AFF;
-}
-
-a.accent-button,
-a.primary-button,
-.primary-button-no-link {
-    padding: 8px;
-    color: #fff;
-    border-radius: 2px;
-    text-transform: uppercase;
-    font-family: Roboto;
-    margin: auto;
-    display: block;
-    background-color: #448AFF;
-    width: 97px;
-    transition: all 0.2s ease-in;
-}
-
-a.primary-button,
-.primary-button-no-link {
-    background-color: #FF7C39 !important;
-    cursor: pointer;
-}
-
-a.accent-button:hover,
-a.primary-button:hover,
-.primary-button-no-link:hover {
-    box-shadow: 0px 3px 8px rgba(30, 30, 30, 0.6);
-}
-
-a.accent-button:active,
-a.primary-button:active,
-.primary-button-no-link:active {
-    background-color: #3977CC;
-    box-shadow: none;
-    transition: none;
 }
 
 .custom-button {
@@ -131,38 +57,6 @@ span.section-divider {
     font-family: Roboto;
     width: 100%;
     height: 80vh;
-} 
-
-#main .landing-info-container {
-    left: 50%;
-    top: 30%;
-    transform: translate(-50%);
-    width: 80%;
-    position: absolute;
-    text-align: center;
-    color: #fff;
-    border-top: 3px solid #fff;
-    padding: 2em 0;
-}
-
-#main .landing-info-container h1 {
-    font-family: Roboto;
-    margin: 0;
-    width: 100%;
-    font-size: 2.2em;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-shadow: -2px 2px 4px #111;
-}
-
-#main .landing-info-container h4 {
-    font-family: Roboto Slab;
-    width: 60%;
-    margin: auto;
-    padding: 1em 1em 2em 1em;
-    font-weight: lighter;
-    border-bottom: 3px solid #fff;
-    
 }
 
 /* WHY US */
@@ -266,8 +160,6 @@ section.products {
     padding: 0em 3em 3em 3em;
     position: relative;
     overflow: hidden;
-    margin-top: 4em;
-    background-color: #fafafa;
 }
 
 .products .brands {
@@ -881,19 +773,42 @@ span.custom-line {
     margin: 0 auto 1em auto;
 }
 
-.testimates blockquote {
-    width: 50%;
-    margin: 0 auto 1em auto;
-    font-family: ds;
-    font-style: italic;
-    font-size: 1.2em;
+#quote {
+    margin-top: 2em;
+    padding: 5em 0em;
+    background: url(../images/working.jpg) no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #666;
+    background-blend-mode: overlay;
 }
 
-.testimates span.quote-by {
+.quote-container {
+    width: 60%;
+    margin: auto;
+    font-family: Roboto;
+    border: 2px solid #fff;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: rgba(0,0,0,0.6);
+    padding: 1em;
+    padding-left: 1.8em;
+}
+
+#quote blockquote {
+    margin: 0 auto 1em auto;
+    color: #fff;
+    font-size: 1.7em;
+    font-style: italic;
+}
+
+#quote span.quote-by {
     text-transform: uppercase;
     color: #f85f00;
+    display: block;
     position: relative;
-    font-family: Roboto;
+    width: 120px;
+    margin: auto;
 }
 
 span.quote-by:after {
@@ -1060,10 +975,9 @@ span.quote-by:before {
     
     #main .landing-info-container {
         padding: 0;
-        border: none;
-        border-right: 2px solid #fff;
-        border-left: 2px solid #fff;
+        border-width: 2px;
         top: 32%;
+        padding-left: 18px;
     }
     
     #main .landing-info-container h1 {
@@ -1168,7 +1082,7 @@ span.quote-by:before {
         clear: both;
         width: 95% !important;
         margin-left: 2%;
-        height: 400px !important;
+        height: 450px !important;
     }
     
     .products li:hover {
@@ -1177,7 +1091,7 @@ span.quote-by:before {
     }
     
     .product-details {
-        height: 160px;
+        height: 210px;
     }
     
     .product-details .product-link {
@@ -1231,6 +1145,7 @@ span.quote-by:before {
     #main .landing-info-container {
         top: 26%;
         border: none;
+        background-color: transparent;
     }
     
     section.more-than-flooring #cabinet-svg {
@@ -1270,6 +1185,7 @@ span.quote-by:before {
     
     .products li {
         height: 500px !important;
+        margin-left: 10px;
     }
     
     .products .product-details {
@@ -1277,13 +1193,15 @@ span.quote-by:before {
     }
     
     #product-laminate,
-    #product-tile {
-        height: 500px !important;
+    #product-tile,
+    #product-countertop {
+        height: 530px !important;
     }
     
     #product-laminate .product-details,
-    #product-tile .product-details {
-        height: 255px;
+    #product-tile .product-details,
+    #product-countertop .product-details {
+        height: 290px;
     }
     
     .brands {
@@ -1298,14 +1216,27 @@ span.quote-by:before {
         padding-bottom: 3em;
     }
     
+    .design-help {
+        height: auto !important;
+        padding: 2em 0 !important;
+    }
     
     #design-help-img {
+        display: none;
     }
     
     .design-help-description-container {
+        position: relative;
         width: 90%;
-        left: 50%;
-        transform: translateX(-50%) !important;
+        left: unset;
+        top: unset;
+        margin: auto;
+        padding-bottom: 10px;
+        background-color: #eaeaea;
+    }
+    
+    .design-help-description {
+        line-height: 1.5em;
     }
     
     .steps h1 {
@@ -1352,6 +1283,16 @@ span.quote-by:before {
     
     .steps li {
         display: block;
+    }
+    
+    #quote .quote-by:after {
+        width: 15px;
+        right: -15px;
+    }
+    
+    #quote .quote-by:before {
+        width: 15px;
+        left: -30px;
     }
 }
 
