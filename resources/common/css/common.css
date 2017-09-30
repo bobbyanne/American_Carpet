@@ -654,6 +654,31 @@ form #submit {
 
 /************************************ CUSTOM FORM END *********************************/
 
+.float-button {
+    display: none;
+}
+
+.float-button.on {
+    display: block;
+    width: 54px;
+    height: 54px;
+    display: block;
+    text-align: center;
+    line-height: 54px;
+    border-radius: 50%;
+    background-color: #FF7C39;
+    color: #fff;
+    font-size: 1.9em;
+    text-shadow: 0px 0px 3px rgba(80,80,80,0.5);
+    box-shadow: 0px 6px 6px rgba(80,80,80, 0.3);
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1;
+    
+}
+
 a:link, a:visited {
     color: #303E50;
     text-decoration: none;
@@ -791,7 +816,7 @@ ul {
     width: 100%;
     font-family: Roboto Condensed;
     color: #fff;
-    max-height: 90%;
+    max-height: 85%;
     overflow-y: scroll;
     overflow-x: hidden;
     display: none;
@@ -1461,6 +1486,15 @@ ul {
     .common-list {
         padding: 0.6em;
         padding-top: 1.5em;
+    }
+    
+    .float-button.on {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+        line-height: 40px;
+        right: 10px;
+        bottom: 10px;
     }
 }
 

@@ -170,7 +170,7 @@ $(function () {
             }
             if (window.innerWidth <= 500) {
                 damper = 2.5;
-                opacityDamper = 3000;
+                opacityDamper = 3500;
             }
             $servingDesc.css(
                 {
@@ -235,8 +235,6 @@ $(function () {
             $build.removeClass('fixed');
         }
     });
-
-    $('.testimates-wrapper').slick();
     $('.hide-unhide').click(function () {
         var $this = $(this);
         var oldText = $this.text();
