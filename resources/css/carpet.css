@@ -8,29 +8,23 @@
     text-align: left;
 }
 
-#sm-landing {
-    background: url(../images/carpet-floor/carpet-03.jpg) center;
-    background-size: cover;
-    display: none;
-}
-
 #choosing-carpet-left {
-    background: url(../images/carpet-floor/carpet-07.jpg) no-repeat;
+    background: url(../images/carpet-floor/carpet-07-small.jpeg) no-repeat;
     background-size: cover;
 }
 
 #carpet-guidelines-right {
-    background: url(../images/carpet-floor/carpet-06.jpg) no-repeat;
+    background: url(../images/carpet-floor/carpet-06-small.jpeg) no-repeat;
     background-size: cover;
 }
 
 #carpet-fibers-left {
-    background: url(../images/wool.jpg) no-repeat;
+    background: url(../images/wool-small.jpeg) no-repeat;
     background-size: cover;
 }
 
 #carpet-cleaning-right {
-    background: url(../images/clean-carpet.jpg) no-repeat;
+    background: url(../images/clean-carpet-small.jpeg) no-repeat;
     background-size: cover;
 }
 

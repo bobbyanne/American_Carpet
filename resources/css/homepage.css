@@ -271,7 +271,7 @@ section.products {
 }
 
 #product-carpet .product-picture {
-    background-image: url(../../resources/images/carpet-floor/carpet-04.jpg);
+    background-image: url(../../resources/images/carpet-floor/carpet-04-small.jpg);
     background-position: left;
 }
 
@@ -1283,6 +1283,10 @@ span.quote-by:before {
     
     .steps li {
         display: block;
+    }
+    
+    #quote {
+        font-size: 0.8em;
     }
     
     #quote .quote-by:after {
