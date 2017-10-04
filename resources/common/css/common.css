@@ -1020,7 +1020,7 @@ ul {
 }
 
 #footer .footer-heading {
-    padding-bottom: 0.3em;
+    padding-bottom: 0.2em;
     color: #fff;
     margin: 0;
     font-family: Roboto Condensed;
@@ -1029,10 +1029,11 @@ ul {
     border-bottom: 1px solid #ccc;
     margin-bottom: 0.3em;
     width: 100%;
+    display: block;
 }
 
 #footer-design .footer-heading:nth-of-type(2) {
-    margin-top: 40px;    
+    margin-top: 25px;    
 }
 
 #footer-contact {
