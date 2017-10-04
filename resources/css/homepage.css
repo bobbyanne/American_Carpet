@@ -317,7 +317,9 @@ section.products {
     height: 240px;
     padding: 4px 10px;
 }
-h4.card-title {
+
+span.card-title {
+    display: block;
     margin: 16px 0 12px 0;
     text-transform: uppercase;
     color: #474747;
