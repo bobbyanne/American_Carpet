@@ -51,8 +51,8 @@ span.section-divider {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #777;
-    background-blend-mode: multiply;
+    background-color: #555;
+    background-blend-mode: overlay;
     background-attachment: fixed;
     font-family: Roboto;
     width: 100%;

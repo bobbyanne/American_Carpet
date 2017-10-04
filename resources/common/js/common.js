@@ -4,6 +4,7 @@ $(function() {
     var $subMenus = $('.sub-menu');
     var $mobileMenu = $('#mobile-menu');
     var $mobileMenuToggle = $('#mobile-menu-toggle');
+    var $scrollTop = $('#scroll-to-top');
 
     /*``````````````````````````````````````````````````````````````````*/
                             /* HELPER FUNCTIONS */
@@ -62,6 +63,12 @@ $(function() {
         
     });
 
+    $scrollTop.on('click', function() {
+        $('body, html').animate({
+            scrollTop: $('#top').offset().top
+        }, 1000);
+    });
+
     $('.mobile-dropdown', $mobileMenu).click(function() {
         $(this).find('.mobile-submenu').toggleClass('show');
     });
@@ -69,6 +76,12 @@ $(function() {
     $(window).scroll(function() {
         if ($mobileMenu.css('display') !== 'none') {
             closeMobileMenu(true);
+        }
+
+        if ($(document).scrollTop() > window.innerHeight) {
+            $scrollTop.addClass('on');
+        } else {
+            $scrollTop.removeClass('on');
         }
     });
 
