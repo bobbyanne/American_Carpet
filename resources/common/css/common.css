@@ -1005,6 +1005,19 @@ ul {
 
 #footer {
     background-color: #111;
+    position: relative;
+    margin-top: 40px;
+}
+
+#footer:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -45px;
+    height: 70px;
+    width: 100%;
+    background: url(../../images/footer-top-waves.png) repeat-x center;
+    z-index: -1;
 }
 
 #footer-container {
@@ -1367,6 +1380,10 @@ ul {
         transform: translateX(-50%);
         width: 300px;
     }
+    
+    #footer:before {
+        background-size: 750px;
+    }
 }
 
 
@@ -1506,6 +1523,10 @@ ul {
     
     .current-container {
         display: none;
+    }
+    
+    #footer:before {
+        background-size: 1000px;
     }
 }
 
